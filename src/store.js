@@ -2,7 +2,7 @@
 
 import create from 'zustand'
 
-const DashboardStore=create((set)=>({
+const useDashboardStore=create((set)=>({
     categories:[
         {
             id:1,
@@ -66,8 +66,8 @@ const DashboardStore=create((set)=>({
     ],
     //to add the widgets 
     addWidget:(categoryId,widget)=>set((state)=>{
-        const newCategory=state.categories.map(category=>category.id===categoryId? {...category,widgets:[...category.widgets,widget]}:category);
-        return {categories:newCategory}
+        const newWidget=state.categories.map(category=>category.id===categoryId? {...category,widgets:[...category.widgets,widget]}:category);
+        return {categories:newWidget}
     }),
     //to remove/delete
     removeWidget:(categoryId,widgetId)=>set((state)=>{
@@ -76,4 +76,4 @@ const DashboardStore=create((set)=>({
     })
 }));
 
-export default DashboardStore;
+export default useDashboardStore;

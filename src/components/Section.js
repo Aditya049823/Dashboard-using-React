@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import DashBoardStore from '../store'
+import useDashBoardStore from '../store'
 import Widget from './Widget'
 
 const Section=({category})=>{
     const[widgetName,setWidgetName]=useState("");
     const[widgetText,setWidgetText]=useState("");
-    const addWidget=DashBoardStore((state)=>state.addWidget)
-    const removeWidget=DashBoardStore((state)=>state.removeWidget)
+    const addWidget=useDashBoardStore((state)=>state.addWidget)
+    const removeWidget=useDashBoardStore((state)=>state.removeWidget)
 
     const addNewWidget=()=>{
         const newWidget={

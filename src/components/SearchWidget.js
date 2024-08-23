@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import DashboardStore from '../store'
+import useDashboardStore from '../store'
 import './DashboardStyle.css'
 
 const SearchWidget=()=>{
-    const categories=DashboardStore((state)=>state.categories);
+    const categories=useDashboardStore((state)=>state.categories);
     const [searchWidget,setSearchWidget]=useState("");
 
     const findWidgets=searchWidget ? categories.flatMap((category)=>
@@ -20,7 +20,7 @@ const SearchWidget=()=>{
                     onChange={(e)=>setSearchWidget(e.target.value)}>
                 </input>
                 <div className='search-results'>
-                    {findWidgets.length >0 ? (
+                    {findWidgets.length > 0 ? (
                         findWidgets.map((widget)=>(
                             <div key={widget.id} className='search-item'>
                                 <h3>{widget.name}</h3>

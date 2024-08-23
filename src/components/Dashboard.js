@@ -1,11 +1,11 @@
 import React from 'react'
-import DashboardStore from '../store'
+import useDashboardStore from '../store'
 import SearchWidget from './SearchWidget'
 import Section from './Section'
 import './DashboardStyle.css'
 
 const Dashboard=()=>{
-    const categories=DashboardStore((state)=>state.categories);
+    const categories=useDashboardStore((state)=>state.categories);
 
     return(
         <>

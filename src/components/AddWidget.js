@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import DashboardStore from '../store';
+import useDashboardStore from '../store';
 
 const AddWidget = () => {
-  const addWidget = DashboardStore(state => state.addWidget);
-  const categories = DashboardStore(state => state.categories);
+  const addWidget = useDashboardStore(state => state.addWidget);
+  const categories = useDashboardStore(state => state.categories);
 
   const [selectedCategory, setSelectedCategory] = useState(categories[0]?.id || null);
   const [widgetName, setWidgetName] = useState('');
